@@ -1,6 +1,5 @@
 import requests
 import configs.config as config
-import configs.db as db
 import models
 
 owm_payload = {'id': config.city_id,
