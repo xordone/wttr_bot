@@ -22,12 +22,12 @@ def send_welcome(message):
 def process_select_step(message):
     try:
         if message.text == 'weather now':
-            bot.send_message(message.chat.id, owm.get_temp(), parse_mode='Markdown')
+            bot.send_message(message.chat.id, owm.get_owm(), parse_mode='Markdown')
         elif message.text == 'Forecast':
-            bot.send_message(message.chat.id, owm.get_hourly(), parse_mode='Markdown')
-        elif message.text == 'plot':
+            bot.send_message(message.chat.id, owm.get_owm(), parse_mode='Markdown')
+        #elif message.text == 'plot':
             # plot.get_plot()
-            bot.send_photo(message.chat.id, open('/home/opc/plot.png', 'rb'))
+            #bot.send_photo(message.chat.id, open('/home/opc/plot.png', 'rb'))
     except Exception as e:
         bot.reply_to(message, '{}'.format(e))
 
