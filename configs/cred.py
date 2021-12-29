@@ -1,2 +1,0 @@
-owm_appid = '512f9c8e4fd159338a75c41dd3837d48'
-telegram_token = '1614185495:AAGC5JAC3UJ5tYJZUKWcdRuyZNrFI7mOlxc'
