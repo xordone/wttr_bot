@@ -8,6 +8,6 @@ trash.py
 /__*
 /configs/__*
 .vscode/settings.json
-configs/cred.py
-configs/db.py
+/configs/cred.py
+/configs/db.py
 
