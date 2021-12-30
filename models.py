@@ -10,7 +10,8 @@ class OwmBasic:
         self.weather = json['weather'][0]['main']
         self.weather_info = json['weather'][0]['description']
         self.temp = json['main']['temp']
-        self.pressure = json['main']['pressure']
+        # Данные в гПА, 1 гПА = 0.75 мм ртутного столба
+        self.pressure = float(json['main']['pressure']) * 0.75
         self.humidity = json['main']['humidity']
         self.wind_speed = json['wind']['speed']
         

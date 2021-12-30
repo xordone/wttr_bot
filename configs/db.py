@@ -52,7 +52,7 @@ def ins(
         })
     conn.commit()
 
-    return 'ok'
+    return 200
 
 
 def fetchall():
