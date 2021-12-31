@@ -68,11 +68,9 @@ def get_forecast():
         obj_list = []
         for i in res['list']:
             obj = models.OwmBasic(i)
-            msg = '*{0}*\n\tТемпература: {1}°С\n\tВлажность: {3}%\n\tДавление: {2}'.format(
+            msg = '*{0}*\n\tТемпература: {1}°'.format(
                 obj.date,
                 obj.temp,
-                obj.pressure,
-                obj.humidity
             )
             obj_list.append(msg)
         return '\n'.join(obj_list)

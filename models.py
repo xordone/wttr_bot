@@ -3,12 +3,34 @@ import datetime
 import configs.config as config
 import configs.db as db
 appid = config.owm_appid
+weather_emoji = {
+    'Clouds':"\U00002601",
+    'Clear':"\U00002600",
+    'Snow':"\U0001F328",
+    'Rain':"\U0001F327",
+    'Drizzle':"\U00002602",
+    'Thunderstorm':"\U000026C8",
+    'Mist':"\U0001F32B",
+    'Smoke':"\U0001F52F",
+    'Haze':"\U0001F52F",
+    'Dust':"\U0001F52F",
+    'Fog':"\U0001F32B",
+    'Sand':"\U0001F52F",
+    'Ash':"\U0001F30B",
+    'Squall':"\U0001F300",
+    'Tornado':"\U0001F32A",
 
+}
 
 class OwmBasic:
     def __init__(self, json):
+        
         self.weather = json['weather'][0]['main']
-        self.weather_info = json['weather'][0]['description']
+        if self.weather in weather_emoji:
+            self.emoji = weather_emoji.get(self.weather)
+        else:
+            self.emoji = ''
+        self.weather_info = self.emoji + json['weather'][0]['description']
         self.temp = json['main']['temp']
         # Данные в гПА, 1 гПА = 0.75 мм ртутного столба
         self.pressure = float(json['main']['pressure']) * 0.75
