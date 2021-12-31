@@ -17,7 +17,7 @@ import sqlite3
 
 # Создаем соединение с нашей базой данных
 # В нашем примере у нас это просто файл базы
-conn = sqlite3.connect('/home/pxl/py/bot4test/temp.sqlite', check_same_thread=False)
+conn = sqlite3.connect('/home/ubuntu/wttr_bot/temp.sqlite', check_same_thread=False)
 
 
 # Создаем курсор - это специальный объект который делает запросы и получает их результаты
