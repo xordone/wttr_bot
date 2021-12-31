@@ -1,3 +1,5 @@
+import sqlite3
+import configs.config as config
 # CREATE TABLE temper (
 #     "time" TEXT NOT NULL,
 #     "temperature" REAL NOT NULL,
@@ -13,11 +15,11 @@
 
 
 # Импортируем библиотеку, соответствующую типу нашей базы данных
-import sqlite3
+
 
 # Создаем соединение с нашей базой данных
 # В нашем примере у нас это просто файл базы
-conn = sqlite3.connect('/home/ubuntu/wttr_bot/temp.sqlite', check_same_thread=False)
+conn = sqlite3.connect(config.db_file_path, check_same_thread=False)
 
 
 # Создаем курсор - это специальный объект который делает запросы и получает их результаты

@@ -27,7 +27,7 @@ class OwmBasic:
             return 'Северный'
         self.wind_deg = toTextualDescription(json['wind']['deg'])
         self.date = datetime.datetime.fromtimestamp(
-            json['dt']).strftime(config.time_format)
+            json['dt'], tz=config.tz).strftime(config.time_format)
 
 class OwmWeather(OwmBasic):
 
@@ -35,9 +35,9 @@ class OwmWeather(OwmBasic):
         super().__init__(json)
         self.city = json['name']
         self.sunrise = datetime.datetime.fromtimestamp(
-            json['sys']['sunrise']).strftime(config.suntime_format)
+            json['sys']['sunrise'], tz=config.tz).strftime(config.suntime_format)
         self.sunset = datetime.datetime.fromtimestamp(
-            json['sys']['sunset']).strftime(config.suntime_format)
+            json['sys']['sunset'],tz=config.tz).strftime(config.suntime_format)
         self.daylen = datetime.datetime.fromtimestamp(
             json['sys']['sunset']) - datetime.datetime.fromtimestamp(
             json['sys']['sunrise'])
